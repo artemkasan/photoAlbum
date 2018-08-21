@@ -1,0 +1,23 @@
+{
+    "typeAcquisition": {
+        "enable": true
+    },
+    "compileOnSave": false,
+    "compilerOptions": {
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+        "sourceMap": true,
+        "module": "commonjs",
+        "target": "es6",
+        "noImplicitAny": true,
+        "jsx": "react",
+        "outDir": "wwwroot/dist",
+        "moduleResolution": "node",
+        "importHelpers": true,
+		"lib": ["es6", "dom"]
+    },
+    "exclude": [
+        "node_modules",
+        "wwwroot"
+    ]
+}

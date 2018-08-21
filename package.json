@@ -1,0 +1,47 @@
+{
+    "scripts": {
+      "webpack": "webpack",
+      "build:vendors": "node_modules/.bin/webpack --config webpack.config.vendor.js",
+      "build:client": "node_modules/.bin/webpack",
+      "build": "yarn build:vendors && yarn build:client"
+    },
+    "devDependencies": {
+      "@types/react": "^16.4.6",
+      "@types/react-dom": "^16.0.6",
+      "@types/webpack-env": "^1.13.6",
+      "aspnet-webpack": "^3.0.0",
+      "aspnet-prerendering":"^3.0.1",
+      "awesome-typescript-loader": "^5.2.0",
+      "babel-core": "^6.26.3",
+      "clean-webpack-plugin": "^0.1.19",
+      "typescript": "^3.0.1",
+      "webpack": "^4.15.1",
+      "webpack-merge": "4.1.4",
+      "mini-css-extract-plugin":"0.4.2",
+      "webpack-cli": "^3.0.8",
+      "webpack-dev-middleware": "^3.1.3",
+      "webpack-hot-middleware": "^2.22.2",
+      "node-noop": "^1.0.0",
+      "css-loader": "^1.0.0",
+      "url-loader": "^1.1.1",
+      "file-loader": "^1.1.11",
+      "typings-for-css-modules-loader":"^1.7.0",
+      "css-hot-loader":"^1.4.2"
+    },
+    "dependencies": {
+      "tslib":"^1.9.3",
+      "babel-polyfill":"6.26.0",
+      "isomorphic-fetch": "2.2.1",
+      "react": "^16.4.1",
+      "react-dom": "^16.4.1",
+      "react-hot-loader": "^4.0.0",
+      "history": "4.7.2",
+      "react-router-dom": "4.3.1",
+      "semantic-ui-react": "0.82.2",
+      "semantic-ui-css": "2.3.3",
+      "reflect-metadata": "0.1.12",
+      "listick": "0.3.3",
+      "listick-react": "0.3.5",
+      "listick-devtools": "0.3.3"
+    }
+  }

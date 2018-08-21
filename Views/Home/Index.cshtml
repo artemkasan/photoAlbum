@@ -1,0 +1,17 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div id="root"
+	asp-prerender-module="dist/server/main-server"
+	>Loading...</div>
+
+@section links {
+    <link rel="stylesheet" href="~/dist/vendor.css"/>
+    <link rel="stylesheet" href="~/dist/app.css"/>
+}
+
+@section scripts {
+    <script src="~/dist/vendor.js" asp-append-version="true"></script>
+    <script src="~/dist/app.js" asp-append-version="true"></script>
+}
