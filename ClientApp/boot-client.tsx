@@ -6,6 +6,19 @@ import { hot } from 'react-hot-loader';
 
 import { AppComponent } from './app';
 
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', async () => {  
+        try {
+            const registration = await navigator.serviceWorker.register('/dist/serviceWorker.js');
+            // Registration was successful
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }
+        catch (err) {
+            console.log('ServiceWorker registration failed: ', err);
+        }
+    });
+}
+
 const HotApp = hot(module)(AppComponent);
 
-ReactDOM.render(<HotApp />, document.getElementById('root'));
+ReactDOM.hydrate(<HotApp />, document.getElementById('root'));

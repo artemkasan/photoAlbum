@@ -25,5 +25,5 @@ bld/
 .awcache/
 .vscode/
 node_modules/
-wwwroot/
+wwwroot/dist
 dist/

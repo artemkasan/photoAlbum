@@ -53,11 +53,32 @@ module.exports = (env) => {
             new CheckerPlugin()
         ]
     };
-    
+	
+	const serviceWorkerConfig = merge(commonConfig, {
+        devtool: 'inline-source-map',
+        entry: {
+			'serviceWorker': './ClientApp/serviceWorker.ts'
+        },
+		output: {
+			path: path.join(outputDir, 'wwwroot', 'dist'),
+			publicPath: 'wwwroot/dist/'
+		},
+		plugins: isDevBuild ? [
+			new webpack.SourceMapDevToolPlugin({
+				filename: '[file].map', // Remove this line if you prefer inline source maps
+				moduleFilenameTemplate: path.relative( 'wwwroot', 'dist',
+					'[resourcePath]') // Point sourcemap entries to the original file locations on disk
+			})
+		] : [
+			// Plugins that apply in production builds only
+			new webpack.optimize.UglifyJsPlugin()
+		]
+	});
+
 	const clientConfig = merge(commonConfig, {
         devtool: 'inline-source-map',
         entry: {
-            'app': './ClientApp/boot-client.tsx',
+			'app': './ClientApp/boot-client.tsx',
         },
 		module: {
 			rules: [
@@ -68,7 +89,6 @@ module.exports = (env) => {
 						MiniCssExtractPlugin.loader,
  						{
 							loader: 'typings-for-css-modules-loader',
-//							loader: 'css-loader',
 							options: {
 								modules: true,
 								namedExport: true,
@@ -156,5 +176,5 @@ module.exports = (env) => {
 		devtool: 'inline-source-map'
 	});
 
-	return [clientConfig, serverConfig];
+	return [clientConfig, serviceWorkerConfig, serverConfig];
 };

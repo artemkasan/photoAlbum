@@ -9,6 +9,7 @@
       "@types/react": "^16.4.6",
       "@types/react-dom": "^16.0.6",
       "@types/webpack-env": "^1.13.6",
+      "@types/workbox-sw": "3.2.0",
       "aspnet-webpack": "^3.0.0",
       "aspnet-prerendering":"^3.0.1",
       "awesome-typescript-loader": "^5.2.0",
@@ -42,6 +43,7 @@
       "reflect-metadata": "0.1.12",
       "listick": "0.3.3",
       "listick-react": "0.3.5",
-      "listick-devtools": "0.3.3"
+      "listick-devtools": "0.3.3",
+      "workbox-sw": "^3.4.1"
     }
   }
